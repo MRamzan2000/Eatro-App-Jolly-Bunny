@@ -1,0 +1,16 @@
+{
+  "name": "Eatro Recipe App - Complete Implementation",
+  "short_name": "Eatro",
+  "description": "Discover healthy recipes with AI recommendations, favorites, and personalized preferences. Your complete recipe companion.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

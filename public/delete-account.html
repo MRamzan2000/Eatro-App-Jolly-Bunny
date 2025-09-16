@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Delete Account - Eatro</title>
+<style>
+  body{font-family:Arial,system-ui,-apple-system;max-width:720px;margin:2rem auto;padding:0 1rem;line-height:1.6}
+  h1{font-size:1.6rem;margin-bottom:0.5rem}
+  .card{border:1px solid #e5e7eb;border-radius:12px;padding:1rem;margin:1rem 0}
+  label{display:block;margin:.5rem 0 .25rem}
+  input,select,textarea{width:100%;padding:.6rem;border:1px solid #cbd5e1;border-radius:8px}
+  button{padding:.7rem 1rem;border:0;border-radius:10px;cursor:pointer}
+  .primary{background:#16a34a;color:#fff}
+  small{color:#6b7280}
+</style>
+</head>
+<body>
+  <h1>Delete Account & Data</h1>
+  <p>You can delete your Eatro account and associated data in two ways:</p>
+
+  <div class="card">
+    <h2>Option A (Recommended): In the app</h2>
+    <p>Open Eatro → <b>Account Settings</b> → <b>Delete my account</b>.</p>
+    <small>This immediately starts deletion via the in-app button.</small>
+  </div>
+
+  <div class="card">
+    <h2>Option B: Request via web form</h2>
+    <!-- Netlify Forms: submits to Netlify, no backend needed -->
+    <form name="eatro-account-deletion" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="eatro-account-deletion" />
+      <label for="email">Account email</label>
+      <input id="email" name="email" type="email" required />
+
+      <label for="method">Sign-in method</label>
+      <select id="method" name="method" required>
+        <option value="google">Google</option>
+        <option value="email">Email</option>
+      </select>
+
+      <label for="notes">Additional details (optional)</label>
+      <textarea id="notes" name="notes" rows="4" placeholder="Anything else we should know?"></textarea>
+
+      <div style="margin-top:0.75rem;display:flex;gap:.5rem;align-items:center">
+        <button type="submit" class="primary">Submit deletion request</button>
+        <a href="mailto:jollybunnyllc@gmail.com?subject=Eatro%20Account%20Deletion%20Request">Or email jollybunnyllc@gmail.com</a>
+      </div>
+      <small>We will verify ownership and complete deletion within 30 days.</small>
+    </form>
+  </div>
+
+  <p><small>Note: Advertising data (e.g., Google AdMob) is handled by Google. You can reset your Advertising ID in device settings.</small></p>
+</body>
+</html>
